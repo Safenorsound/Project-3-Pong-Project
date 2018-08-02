@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Pong</title>
-	</head>
-	<body>
-		<div class="game-wrapper">
-			<h1>Pong</h1>
-			<div id="game"></div>
-			<!-- Rough-out your SVG mark-up here to start... -->
-		</div>
-		<script type="text/javascript" src="build/bundle.js"></script>
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pong</title>
+</head>
+
+<body>
+	<div class="game-wrapper">
+		<h1>Pong</h1>
+		<div id="game"></div>
+		<!-- Rough-out your SVG mark-up here to start... -->
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 256" width="512" height="256">
+
+			<!--  Board  -->
+			<rect x="0" y="0" width="512" height="256" fill="#0C6E0C" stroke="#000" stroke-width="5" />
+
+			<!-- Left Paddle   -->
+			<rect x="15" y="50" width="8" height="56" fill="#FFFFFF" stroke="#000" stroke-width="5" />
+
+			<!-- Right Paddle   -->
+			<rect x="495" y="50" width="8" height="56" fill="#FFFFFF" stroke="#000" stroke-width="5" />
+
+			<!--   Large Circle -->
+			<circle cx="200" cy="150" r="8" fill="#FFFFFF" stroke="black" stroke-width="5" />
+
+			<!--  Dividing Line  -->
+			<line x1="256" y1="0" x2="256" y2="256" stroke="white" stroke-dasharray="7 5" stroke-width="4" />
+
+
+	</div>
+	<script type="text/javascript" src="build/bundle.js"></script>
+</body>
+
 </html>
