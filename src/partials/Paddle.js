@@ -29,7 +29,7 @@ export default class Paddle {
     }
 
     down(){
-        this.y = Math.min(this.y + this.speed, this.boardHeight - this.height - this.width;
+        this.y = Math.min(this.y + this.speed, this.boardHeight - this.height - this.width);
     }
 
     render(svg){

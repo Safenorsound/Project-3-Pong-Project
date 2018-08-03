@@ -1,4 +1,4 @@
-import {SVG_NS} from '..settings';
+import {SVG_NS} from '../settings';
 
 // Ball.js
 export default class Ball {
@@ -7,12 +7,26 @@ export default class Ball {
       this.boardWidth = boardWidth;
       this.boardHeight = boardHeight;
       this.direction = 1;
+
+      this.reset();
     }
 
+    // loop runs 60 times a second.
     render(svg) {
-        let rect = document.createElementNS(SVG_NS, 'rect');
-        rect.setAttributeNS(null, 'fill', '#353535');
-        rect.setAttributeNS(null, 'fill-opacity', '0');
-        rect.setAttributeNS(null, 'width', this.width);
-        rect.setAttributeNS(null, 'height', this.height);
+        // draw ball
+        let circle = document.createElementNS(SVG_NS, 'circle');
+        circle.setAttributeNS(null, 'r', this.radius);
+        circle.setAttributeNS(null, 'cx', this.x); // control the ball movement
+        circle.setAttributeNS(null, 'cy', this.y); // control the ball movement
+        circle.setAttributeNS(null, 'fill', 'white');
+        svg.appendChild(circle);
   }
+
+//   This resets the ball after a player scores a goal.
+  reset() {
+    this.x = this.boardWidth / 2;
+    this.y = this.boardHeight / 2;
+  }
+
+
+}
