@@ -38,10 +38,26 @@ export default class Game {
       KEYS.down
     );
 
-    this.ball = new Ball(8, this.width, this.height);
+	this.ball = new Ball(8, this.width, this.height);
+	
+	//   Keydown for pausing game
+document.addEventListener('keydown', event => {
+	console.log(event);
+	switch (event.key){
+		case KEYS.spaceBar:
+		  this.pause = !this.pause;
+		  break;
+	}
+  });
+
   }
 
-  render() {
+  render(){
+
+	if(this.pause){
+		return;
+	}
+	
     // be sure to empty out the last frame before re-rendering
     this.gameElement.innerHTML = "";
 
@@ -56,4 +72,6 @@ export default class Game {
 	this.player2.render(svg);
 	this.ball.render(svg);
   }
+
 }
+

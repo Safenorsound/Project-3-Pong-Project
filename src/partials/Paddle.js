@@ -11,7 +11,7 @@ export default class Paddle {
       this.score = 0;
 
       document.addEventListener("keydown", event => {
-        console.log(event);
+        // console.log(event);
         switch (event.key) {
             case up:
               this.up();
