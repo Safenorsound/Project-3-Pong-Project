@@ -1,4 +1,4 @@
-import { SVG_NS } from "../settings";
+import { SVG_NS } from '../settings';
 
 export default class Ball {
   constructor(radius, boardWidth, boardHeight) {
@@ -102,11 +102,11 @@ this.goal(player2);
 this.direction = 1;
 }
     // draw ball
-    let circle = document.createElementNS(SVG_NS, "circle");
-    circle.setAttributeNS(null, "r", this.radius);
-    circle.setAttributeNS(null, "cx", this.x); // x of the centre point
-    circle.setAttributeNS(null, "cy", this.y); // y of the centre point
-    circle.setAttributeNS(null, "fill", "white");
+    let circle = document.createElementNS(SVG_NS, 'circle');
+    circle.setAttributeNS(null, 'r', this.radius);
+    circle.setAttributeNS(null, 'cx', this.x); // x of the centre point
+    circle.setAttributeNS(null, 'cy', this.y); // y of the centre point
+    circle.setAttributeNS(null, 'fill', 'white');
     svg.appendChild(circle);
   }
 }
