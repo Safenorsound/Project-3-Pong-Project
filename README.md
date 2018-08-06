@@ -1,6 +1,6 @@
 # Pong Game
 
-A basic pong game using SVGs.
+A basic pong game using SVGs. This was our third project in the Web Development Program at Red Academy. 
 
 ## Setup
 

@@ -3,16 +3,16 @@ import { SVG_NS, KEYS } from "../settings";
 import Paddle from "./Paddle";
 import Ball from "./Ball";
 import Score from "./Score";
+import Message from "./Message";
 
 export default class Game {
   constructor(element, width, height) {
     this.element = element;
     this.width = width;
     this.height = height;
-
     this.gameElement = document.getElementById(this.element);
-
     this.board = new Board(this.width, this.height);
+	;
 
     // Making Players
     this.paddleWidth = 8;
@@ -26,10 +26,9 @@ export default class Game {
       this.boardGap,
       (this.height - this.paddleHeight) / 2,
       KEYS.a,
-	  KEYS.z,
-	  'player1'
+      KEYS.z,
+      "player1"
     );
-
     this.player2 = new Paddle(
       this.height,
       this.paddleWidth,
@@ -37,50 +36,71 @@ export default class Game {
       this.width - this.boardGap - this.paddleWidth,
       (this.height - this.paddleHeight) / 2,
       KEYS.up,
-	  KEYS.down,
-	  'player2'
-	);
-	
-	this.score1 = new Score(this.width / 2 - 50, 30, 30);
-	this.score2 = new Score(this.width / 2 + 25, 30, 30);
+      KEYS.down,
+      "player2"
+    );
 
+    this.score1 = new Score(this.width / 2 - 50, 30, 30);
+    this.score2 = new Score(this.width / 2 + 25, 30, 30);
 
-	this.ball = new Ball(8, this.width, this.height);
-	
-	//   Keydown for pausing game
-document.addEventListener('keydown', event => {
-	console.log(event);
-	switch (event.key){
-		case KEYS.spaceBar:
-		  this.pause = !this.pause;
+    this.ball = new Ball(10, this.width, this.height);
+
+    //   Keydown for pausing game
+    document.addEventListener("keydown", event => {
+      switch (event.key) {
+        case KEYS.spaceBar:
+          this.pause = !this.pause;creat
 		  break;
-	}
-  });
+      }
+    });
   }
 
-  render(){
-
-	if(this.pause){
-		return;
-	}
-	
-    // be sure to empty out the last frame before re-rendering
-    this.gameElement.innerHTML = "";
-
-    let svg = document.createElementNS(SVG_NS, "svg");
-    svg.setAttributeNS(null, "width", this.width);
-    svg.setAttributeNS(null, "height", this.height);
-    svg.setAttributeNS(null, "viewBox", `0 0 ${this.width} ${this.height}`);
-    this.gameElement.appendChild(svg);
-
-	// render the board
-    this.board.render(svg);
-    this.player1.render(svg);
-	this.player2.render(svg);
-	this.ball.render(svg, this.player1, this.player2);
-
-	this.score1.render(svg, this.player1.score);
-	this.score2.render(svg, this.player2.score);
-  }
+  Win(player) {
+	this.isPaused = false;
+	// this.togglePause();
+	this.newGame = true;
+	this.message = new Message(this.width / 2, this.height / 2, 35, `Player Wins!`, 'Press space to continue');
 }
 
+  render() {
+    if (this.pause) {
+      if (this.newGame) {
+        if (this.pause) {
+			this.board.render(svg);
+
+		  this.newGame = !this.newGame;
+          this.createGameElements();
+		  this.setInitialProperties();
+		  this.message = new Message(
+			this.width / 2,
+			this.height / 2,
+			35,
+			" ",'Unpause = spacebar'
+		  )
+        }
+      }
+      // be sure to empty out the last frame before re-rendering
+      this.gameElement.innerHTML = "";
+      let svg = document.createElementNS(SVG_NS, "svg");
+      svg.setAttributeNS(null, "width", this.width);
+      svg.setAttributeNS(null, "height", this.height);
+      svg.setAttributeNS(null, "viewBox", `0 0 ${this.width} ${this.height}`);
+      this.gameElement.appendChild(svg);
+      this.message = new Message(
+        this.width / 2,
+        this.height / 2,
+        35,
+        " ", 'Spacebar = pause'
+      );
+
+      // render the board
+      this.board.render(svg);
+      this.player1.render(svg);
+      this.player2.render(svg);
+      this.ball.render(svg, this.player1, this.player2);
+      this.message.render(svg);
+      this.score1.render(svg, this.player1.score);
+      this.score2.render(svg, this.player2.score);
+    }
+  }
+}

@@ -87,5 +87,6 @@ h1 {
 
 
 #game {
-  background: pink !important;
+  background: green !important;
+  background-image: url(/images/chess-board-background.jpg);
 }
