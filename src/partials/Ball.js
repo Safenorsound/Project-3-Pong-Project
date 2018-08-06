@@ -37,6 +37,7 @@ export default class Ball {
       this.pong.play();
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy;
+      this.pong.play();
     }    
   }
 
