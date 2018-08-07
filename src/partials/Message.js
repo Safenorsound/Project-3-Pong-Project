@@ -1,4 +1,4 @@
-// The following text method was adapted methods from the following project: https://github.com/htichcock/RED-web-dev-project-03/tree/master/src/partials
+// The following Message method was adapted methods from the following project: https://github.com/htichcock/RED-web-dev-project-03/tree/master/src/partials
 
 import {
     SVG_NS,
@@ -17,7 +17,7 @@ import {
       text.setAttributeNS(null, 'text-anchor', 'middle');
       text.setAttributeNS(null, 'alignment-baseline', 'central');
       text.setAttributeNS(null, 'x', this.x);
-      text.setAttributeNS(null, 'y', this.y);
+      text.setAttributeNS(null, 'y', this.y);  
       text.setAttributeNS(null, 'font-size', this.size)
       text.setAttributeNS(null, 'fill', `#FFF`);
       let subText = document.createElementNS(SVG_NS, 'text');

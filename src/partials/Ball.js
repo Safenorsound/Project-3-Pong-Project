@@ -7,15 +7,18 @@ export default class Ball {
     this.boardWidth = boardWidth;
     this.boardHeight = boardHeight;
     this.direction = 1;
+
     this.reset();
     this.ping = new Audio('public/sounds/pong-01.wav');
     this.pong = new Audio('public/sounds/pong-02.wav');
     this.celebrate = new Audio('public/sounds/pong-04.wav');
+    this.reset();
   }
 
   reset() {
     this.x = this.boardWidth / 2;
     this.y = this.boardHeight / 2;
+    
 
     this.vy = 0;
     while (this.vy === 0) {
@@ -34,11 +37,14 @@ export default class Ball {
     
     if (hitLeft || hitRight) {
       this.vx = -this.vx;
-      this.pong.play();
     } else if (hitTop || hitBottom) {
       this.vy = -this.vy;
       this.pong.play();
+      
     }    
+  }
+  togglePause() {
+    this.pause = !this.pause;
   }
 
   // Ball.js
@@ -51,6 +57,7 @@ export default class Ball {
         player2.y,
         player2.width,
         player2.height
+        
       );
 
       let [leftX, rightX, topY, bottomY] = paddle;
@@ -63,8 +70,6 @@ export default class Ball {
         this.vx = -this.vx;
         this.ping.play();
         // bounce feature
-
-        
 
         // the right edge of the ball is >= left edge of the paddle
       }
@@ -88,8 +93,15 @@ player.score++;
 this.reset();
 this.celebrate;
 // Declaring a winner at 10 points.
-if (player.score >= 10) {
-  this.game.Win(player);
+if (player.score >= 5) {
+  // this.game.Win(player);
+  if (this.player.score = 5) {
+    document.getElementById("game");
+    (innerHTML = 'player 1 wins!')
+  } else {
+    (innerHTML = 'player 2 wins!')
+    
+  }
 }
   }
   
@@ -122,4 +134,3 @@ this.celebrate.play();
     svg.appendChild(circle);
   }
 }
-
