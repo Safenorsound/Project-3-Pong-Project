@@ -90,19 +90,19 @@ export default class Ball {
 
   goal(player){
 player.score++;
-this.reset();
 this.celebrate;
-// Declaring a winner at 10 points.
-if (player.score >= 5) {
-  // this.game.Win(player);
-  if (this.player.score = 5) {
-    document.getElementById("game");
-    (innerHTML = 'player 1 wins!')
-  } else {
-    (innerHTML = 'player 2 wins!')
+this.reset();
+// Declaring a winner at 5 points.
+// if (player.score >= 5) {
+//   // this.game.Win(player);
+//   if (this.player.score = 5){
+//   //   document.getElementById("game");
+//   //   // (innerHTML = 'player 1 wins!')
+//   // } else {
+//   //   // (innerHTML = 'player 2 wins!')
     
-  }
-}
+//   }
+// }
   }
   
   render(svg, player1, player2){

@@ -14,7 +14,7 @@ export default class Paddle {
     this.keyState = {};
 
     document.addEventListener(
-      "keydown",
+      'keydown',
       event => {
         this.keyState[event.key || event.which] = true;
       },
@@ -22,7 +22,7 @@ export default class Paddle {
     );
 
     document.addEventListener(
-      "keyup",
+      'keyup',
       event => {
         this.keyState[event.key || event.which] = false;
       },
