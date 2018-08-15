@@ -10,7 +10,7 @@ export default class Paddle {
     this.speed = 20;
     this.score = 0;
 
-    this.player = player;
+    this.name = player;
     this.keyState = {};
 
     document.addEventListener(
