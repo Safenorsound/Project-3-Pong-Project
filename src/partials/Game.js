@@ -5,6 +5,7 @@ import Ball from './Ball';
 import Score from './Score';
 import Winner from './WinnerMessage';
 export default class Game {
+  
   constructor(element, width, height) {
     this.element = element;
     this.width = width;
@@ -35,6 +36,7 @@ export default class Game {
       this.paddleHeight,
       this.width - this.boardGap - this.paddleWidth,
       (this.height - this.paddleHeight) / 2,
+
       KEYS.up,
       KEYS.down,
       'player 2'
