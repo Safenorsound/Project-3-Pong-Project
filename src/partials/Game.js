@@ -17,6 +17,7 @@ export default class Game {
     this.paddleHeight = 56;
     this.boardGap = 10;
     this.autopause = true;
+
     this.player1 = new Paddle(
       this.height,
       this.paddleWidth,
@@ -27,6 +28,7 @@ export default class Game {
       KEYS.z,
       'player 1'
     );
+
     this.player2 = new Paddle(
       this.height,
       this.paddleWidth,
@@ -40,7 +42,7 @@ export default class Game {
     this.score1 = new Score(this.width / 2 - 50, 30, 30);
     this.score2 = new Score(this.width / 2 + 25, 30, 30);
     // Position of the winner announcement.
-    this.winner = new Winner(this.width / 2 - 20, this.height / 2, 50);
+    this.winner = new Winner(this.width / 2 - 210, this.height / 2, 50);
     //   Stretch Goal: creating more balls.
     this.ball = new Ball(6, this.width, this.height);
     this.ball2 = new Ball(8, this.width, this.height);
@@ -56,14 +58,15 @@ export default class Game {
     });
   }
 
+  // Continuously checks for a winning score.
   checkWinner(p1, p2, svg) {
     // Winning score
-    if (p1.score >= 2) {
+    if (p1.score >= 10) {
       // Pauses the game when a player wins.
       this.pause = !this.pause;
       this.winner.render(svg, p1.name + 'Wins!!!');
       // Winning score
-    } else if (p2.score >= 2) {
+    } else if (p2.score >= 10) {
       // Pauses the game when a player wins.
       this.pause = !this.pause;
       this.winner.render(svg, p2.name + 'Wins!!!');
@@ -71,8 +74,6 @@ export default class Game {
   }
 
   render() {
-    // if (this.pause) {
-    // if (this.newGame) {
     if (this.pause) {
       return;
     }
@@ -95,6 +96,4 @@ export default class Game {
     this.score2.render(svg, this.player2.score);
     this.checkWinner(this.player1, this.player2, svg);
   }
-  //   }
-  // }
 }

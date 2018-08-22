@@ -20,7 +20,6 @@ export default class Paddle {
       },
       true
     );
-
     document.addEventListener(
       'keyup',
       event => {
