@@ -5,7 +5,6 @@ import Ball from './Ball';
 import Score from './Score';
 import Winner from './WinnerMessage';
 export default class Game {
-  
   constructor(element, width, height) {
     this.element = element;
     this.width = width;
