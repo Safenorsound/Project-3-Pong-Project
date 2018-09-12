@@ -18,35 +18,31 @@ A basic pong game using SVGs. This was our third project in the Web Development 
 
 ## Keys
 
-**Player 1:**
+**Player 1 (left):**
 * a: up
 * z: down
 
-**Player 2:**
+**Player 2 (right):**
 * ▲ : up
 * ▼: down
 
 
-<h1>Personal Learnings</h1>
+# Personal Learnings
 In my third project with Red Academy we created a pong game from scratch. 
 
 
-<h1>Technologies Used</h1>
-<ul>
-<li> The role of SGV's to render graphics, shapes, and features
-<li> Familiarity with Webpack
-<li> Introduction to HTML5 Audio sounds
-<li> Introduction to ES2015 class constructors and methods
-<li> Instantiation of objects with "new"
-<li> Use of "this" within classes
-<li> Object-oriented classes and styles
-<ul>
+# Technologies Used
+* The role of SGV's to render graphics, shapes, and features
+* Familiarity with Webpack
+* Introduction to HTML5 Audio sounds
+* Introduction to ES2015 class constructors and methods
+* Instantiation of objects with "new"
+* Use of "this" within classes
+* Object-oriented classes and styles
 
-<h1>Stretch Goals</h1>
-<ul>
-<li> The creation of more balls, shapes, and randomly generating a new color each frame.
-<li> Familiarity with Webpack
-<li> Introduction to HTML5 Audio sounds
-<li> Declares a winner at final score. 
-<li> Generates a the final score in the middle of the board
-</ul>
+# Stretch Goals
+* The creation of more balls, shapes, and randomly generating a new color each frame.
+* Familiarity with Webpack
+* Introduction to HTML5 Audio sounds
+* Declares a winner at final score. 
+* Generates a the final score in the middle of the board
