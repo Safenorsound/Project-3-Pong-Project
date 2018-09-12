@@ -50,4 +50,3 @@ In my third project with Red Academy we created a pong game from scratch.
 <li> Declares a winner at final score. 
 <li> Generates a the final score in the middle of the board
 </ul>
-
